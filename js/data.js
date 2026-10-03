@@ -10,7 +10,7 @@ const AFFICHER_PLACEHOLDERS = true;
 const PROFIL = {
   nom: "Ousmane DIYE",
   titre: "Développeur Web / Mobile",
-  photo: "images/ousmane2.jpg",
+  photo: "images/prophil.jpeg",
   accroche:
     "Étudiant en Master Informatique à l'Université Joseph Ki-Zerbo (UJKZ), spécialisé en systèmes d'information en entreprise. " +
     "Autonome et orienté pratique, je crée des applications web et mobiles et je forme d'autres étudiants au numérique.",

@@ -27,6 +27,12 @@ header.nav nav a:hover{opacity:1;text-decoration:underline}
 .btn.primary{background:#fff;color:var(--side)}
 .btn.ghost{border:1px solid rgba(255,255,255,.6);color:#fff}
 
+/* Drapeau + devise */
+.hero .hero-devise{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.25)}
+.flag{width:48px;height:32px;border-radius:3px;box-shadow:0 0 0 1px rgba(255,255,255,.4);flex:none}
+.hero-devise .pays{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.85rem;color:#ffb25c}
+.hero-devise .devise{font-style:italic;opacity:.95}
+
 /* Sections */
 section{padding:40px 0 8px}
 section h2{margin:0 0 18px;font-size:1.25rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);padding-bottom:6px;border-bottom:2px solid var(--accent)}

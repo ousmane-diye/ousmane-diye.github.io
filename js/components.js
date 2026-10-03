@@ -48,6 +48,22 @@ const Lightbox = {
 };
 document.addEventListener("keydown", (e) => e.key === "Escape" && Lightbox.close());
 
+
+/* ---------- Drapeau du Burkina Faso (SVG, aucune image à ajouter) ---------- */
+function DrapeauBF() {
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("viewBox", "0 0 300 200");
+  svg.setAttribute("class", "flag");
+  svg.setAttribute("role", "img");
+  svg.setAttribute("aria-label", "Drapeau du Burkina Faso");
+  svg.innerHTML =
+    '<rect width="300" height="100" fill="#EF2B2D"/>' +
+    '<rect y="100" width="300" height="100" fill="#009E49"/>' +
+    '<polygon fill="#FCD116" points="150,60 158.98,87.64 188.04,87.64 164.53,104.72 173.51,132.36 150,115.28 126.49,132.36 135.47,104.72 111.96,87.64 141.02,87.64"/>';
+  return svg;
+}
+
 /* ---------- Blocs de contenu ---------- */
 function Header() {
   const liens = [["profil","Profil"],["parcours","Parcours"],["experience","Expérience"],["projets","Projets"],["competences","Compétences"],["galerie","Galerie"],["contact","Contact"]];
@@ -76,6 +92,11 @@ function Hero() {
         h("a", { class: "btn ghost", href: "#contact" }, "Me contacter"),
         h("a", { class: "btn ghost", href: CONTACT.github, target: "_blank", rel: "noopener noreferrer" }, "GitHub")
       )
+    ),
+    h("div", { class: "wrap hero-devise" },
+      DrapeauBF(),
+      h("span", { class: "pays" }, "Burkina Faso"),
+      h("span", { class: "devise" }, "« " + (PROFIL.devise || "La Patrie ou la Mort, nous vaincrons") + " »")
     )
   );
 }
@@ -127,7 +148,7 @@ function Footer() {
       h("h2", {}, "Contact"),
       h("ul", { class: "contact-list" },
         h("li", {}, "✉ ", h("a", { href: "mailto:" + CONTACT.email }, CONTACT.email)),
-        h("li", {}, "⌥ ", h("a", { href: CONTACT.github, target: "_blank", rel: "noopener noreferrer" }, "github.com/ousmane-diye")),
+        h("li", {}, "⌥ ", h("a", { href: CONTACT.github, target: "_blank", rel: "noopener noreferrer" }, CONTACT.github.replace("https://", ""))),
         CONTACT.tel.map((t) => h("li", {}, "☎ ", h("a", { href: "tel:" + t.replace(/\s/g, "") }, t))),
         h("li", {}, "⌖ " + CONTACT.lieu)
       ),
